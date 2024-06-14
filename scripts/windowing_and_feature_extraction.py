@@ -8,6 +8,8 @@ from TimeFrequencyFeatures import TimeFrequencyFeatures
 from EcgFeatures import EcgFeatures
 import concurrent.futures
 import warnings
+import gzip
+import shutil
 
 
 """
@@ -17,8 +19,16 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Load parameters from the yaml file
-with open('parameters.yaml', 'r') as f:
+# Get the current directory
+current_dir = os.path.dirname(__file__)
+# Get the parent directory
+parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+# Construct the path to the yaml file
+yaml_file_path = os.path.join(parent_dir, 'parameters.yaml')
+# Load the yaml file
+with open(yaml_file_path, 'r') as f:
     params = yaml.safe_load(f)
+
 seed_number = params['seed_number']
 fs = params['upsample_freq']
 window_size = params['window_size']
@@ -30,14 +40,34 @@ window_size = window_size * fs
 overlap = overlap * window_size
 step_size = window_size - overlap
 
-# Get the current directory
-current_dir = os.getcwd()
-# The directory for the intermediate data
-intermediate_data_dir = os.path.join(current_dir, 'data', 'intermediate')
-# Loading the segmented data
-file_name = os.path.join(intermediate_data_dir, 'segmented_data.pickle')
-with open(file_name, 'rb') as f:
-    segmented_data = pickle.load(f)
+"""
+Functions
+"""
+# A function for loading the available segmented data
+def load_pickle_from_parts(parts_dir):
+    # Combine the parts into a single compressed file
+    combined_path = os.path.join(parts_dir, 'combined_compressed_pickle.gz')
+    with open(combined_path, 'wb') as combined_file:
+        part_num = 0
+        while True:
+            part_path = os.path.join(parts_dir, f'segmented_data_part_{part_num:03d}')
+            if not os.path.exists(part_path):
+                break
+            with open(part_path, 'rb') as part_file:
+                shutil.copyfileobj(part_file, combined_file)
+            part_num += 1
+    # Decompress the combined file and load the pickle data
+    with gzip.open(combined_path, 'rb') as f_in:
+        data = pickle.load(f_in)
+    # Optionally remove the combined file after loading
+    os.remove(combined_path)
+    return data
+
+# Loading segmented data
+current_dir = os.path.dirname(__file__)  # Use the current working directory
+parent_dir = os.path.dirname(current_dir)
+parts_dir = os.path.join(parent_dir, 'data')
+segmented_data = load_pickle_from_parts(parts_dir)
 
 # Defining feature generation objects
 stat_feat_extractor = StatisticalFeatures(window_size=window_size)
