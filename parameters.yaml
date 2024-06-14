@@ -1,0 +1,118 @@
+# Configuration for data processing
+
+# Seed number for reproducibility
+seed_number: 42
+
+# Parameters set for raw data from various sources
+raw_data_pars:
+  # Settings for corsano wrist accelerometer data
+  corsano_wrist_acc:
+    file_format: ['.gz']  # Accepted file format for corsano wrist data
+    data_columns: ['accX', 'accY', 'accZ']  # Columns representing data in the file
+    sample_rate: 32  # Sample rate of data in Hz
+
+  # Settings for cosinuss ear accelerometer data
+  cosinuss_ear_acc_x_acc_y_acc_z:
+    file_format: ['.gz']
+    data_columns: ['acc_x', 'acc_y', 'acc_z']
+    sample_rate: 100
+
+  # Settings for sensomative data
+  sensomative:
+    file_format: ['.gz']
+    data_columns:
+      - 'device1_value0'
+      - 'device1_value1'
+      - 'device1_value2'
+      - 'device1_value3'
+      - 'device1_value4'
+      - 'device1_value5'
+      - 'device1_value6'
+      - 'device1_value7'
+      - 'device1_value8'
+      - 'device1_value9'
+      - 'device1_value10'
+      - 'device1_value11'
+      - 'device2_value0'
+      - 'device2_value1'
+      - 'device2_value2'
+      - 'device2_value3'
+      - 'device2_value4'
+      - 'device2_value5'
+      - 'device2_value6'
+      - 'device2_value7'
+      - 'device2_value8'
+      - 'device2_value9'
+      - 'device2_value10'
+      - 'device2_value11'
+    sample_rate: 10
+
+  # Settings for vivalnk ECG data
+  vivalnk_vv330_ecg:
+    file_format: ['dirs', '.gz']
+    data_columns: ['ecg']
+    sample_rate: 128
+
+  # Settings for vivalnk acceleration data
+  vivalnk_vv330_acceleration:
+    file_format: ['dirs', '.gz']
+    data_columns: ['x', 'y', 'z']
+    sample_rate: 5
+
+  # Settings for zurichmove data
+  zurichmove:
+    file_format: ['.gz']
+    data_columns:
+      - '_acc_x'
+      - '_acc_y'
+      - '_acc_z'
+      - '_gyro_x'
+      - '_gyro_y'
+      - '_gyro_z'
+    sample_rate: 50
+
+# Frequencies for resampling
+upsample_freq: 128  # Upsample frequency in Hz
+
+# Filter parameters for processing signals
+filter_parameters:
+  lowcut_kinematic: 0.5  # Low-cut frequency for kinematic signals (Hz)
+  highcut_kinematic: 10  # High-cut frequency for kinematic signals (Hz)
+  # https://www.medteq.net/article/2017/4/1/ecg-filters
+  lowcut_ecg: 0.5  # Low-cut frequency for ECG signal (Hz)
+  highcut_ecg: 40  # High-cut frequency for ECG signal (Hz)
+  filter_order: 5  # Filter order for processing
+
+# Mapping of activity labels to numerical values
+activities_label_mapping:
+  calmness: 0
+  selfpropulsion: 1
+  armraises: 2
+  transfer: 3
+  usingphone: 4
+  talking: 5
+  washhands: 6
+  eating: 7
+  assistedprop: 8
+  usingcomputer: 9
+  changingclothes: 10
+  pressurerelief: 11
+
+# Windows size in seconds
+window_size: 20
+
+# Window overlap in ratio
+overlap: 0.95
+
+# Frequency bands for spectral analysis
+f_bands:
+  - [0, 1]
+  - [1, 2]
+  - [2, 3]
+  - [3, 4]
+  - [4, 5]
+  - [5, 6]
+  - [6, 7]
+  - [7, 8]
+  - [8, 9]
+  - [9, 10]
