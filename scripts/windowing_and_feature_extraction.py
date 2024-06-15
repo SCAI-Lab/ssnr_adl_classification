@@ -1,11 +1,12 @@
+import sys
 import os
 import pandas as pd
 import pickle
 import yaml
-from StatisticalFeatures import StatisticalFeatures
-from SpectralFeatures import SpectralFeatures
-from TimeFrequencyFeatures import TimeFrequencyFeatures
-from EcgFeatures import EcgFeatures
+from .StatisticalFeatures import StatisticalFeatures
+from .SpectralFeatures import SpectralFeatures
+from .TimeFrequencyFeatures import TimeFrequencyFeatures
+from .EcgFeatures import EcgFeatures
 import concurrent.futures
 import warnings
 import gzip
@@ -21,8 +22,6 @@ warnings.filterwarnings("ignore")
 # Load parameters from the yaml file
 # Get the current directory
 current_dir = os.path.dirname(__file__)
-print(current_dir, '\n\n\n\n\n\n')
-
 # Get the parent directory
 parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
 # Construct the path to the yaml file

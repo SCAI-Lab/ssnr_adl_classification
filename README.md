@@ -3,6 +3,9 @@ This repo includes anonymized labeled data for activities of daily living in spi
 
 Python 3.10.13
 
+
+cd ssnr_adl_classification
 source venv/bin/activate
 
 pip install -r requirements.txt
+python -m scripts.windowing_and_feature_extraction

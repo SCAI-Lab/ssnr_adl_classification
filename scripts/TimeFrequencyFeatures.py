@@ -1,5 +1,5 @@
 import numpy as np
-from StatisticalFeatures import StatisticalFeatures
+from .StatisticalFeatures import StatisticalFeatures
 import pywt
 
 
