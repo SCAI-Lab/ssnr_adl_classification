@@ -21,6 +21,8 @@ warnings.filterwarnings("ignore")
 # Load parameters from the yaml file
 # Get the current directory
 current_dir = os.path.dirname(__file__)
+print(current_dir, '\n\n\n\n\n\n')
+
 # Get the parent directory
 parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
 # Construct the path to the yaml file
@@ -199,5 +201,3 @@ if __name__ == '__main__':
     file_name = os.path.join(intermediate_data_dir, f'features_{int(window_size // fs)}.pkl')
     with open(file_name, 'wb') as f:
         pickle.dump(features, f)
-
-
