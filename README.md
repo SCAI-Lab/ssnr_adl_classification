@@ -40,6 +40,24 @@ This will ensure that all the dependencies for the project are installed and pro
 
 ---
 
+## Associating Virtual Environment with Jupyter Kernel
+
+To use the created virtual environment with Jupyter notebooks, you need to associate it with a Jupyter kernel. Follow these steps:
+
+1. **Install the IPython kernel for the virtual environment:**
+
+    `python -m ipykernel install --user --name=venv`
+
+2. **Start Jupyter Notebook:**
+
+    `jupyter notebook`
+
+3. **Select the Kernel in Jupyter Notebook:**
+    - Open the notebook you want to work on.
+    - Go to the `Kernel` menu, select `Change kernel`, and choose `venv`.
+
+---
+
 Make sure to deactivate the virtual environment when you're done working on the project:
 
 `deactivate`
