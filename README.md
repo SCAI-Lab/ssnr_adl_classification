@@ -45,10 +45,4 @@ Make sure to deactivate the virtual environment when you're done working on the 
 `deactivate`
 
 
-
-cd ssnr_adl_classification
-source venv/bin/activate
-
-pip install -r requirements.txt
-
 python -m scripts.windowing_and_feature_extraction
