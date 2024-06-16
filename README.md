@@ -1,7 +1,6 @@
-# ssnr_adl_classification
-This repo includes anonymized labeled data for activities of daily living in spinal cord injury individuals. There are also introductions into classification pipelines.
+# SSNR ADL Classification
 
-# Project Title
+This repo includes anonymized labeled data for activities of daily living in spinal cord injury individuals. There are also introductions to classification pipelines.
 
 ## Cloning the Repository
 
