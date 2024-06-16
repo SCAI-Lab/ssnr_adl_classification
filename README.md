@@ -8,4 +8,5 @@ cd ssnr_adl_classification
 source venv/bin/activate
 
 pip install -r requirements.txt
+
 python -m scripts.windowing_and_feature_extraction
