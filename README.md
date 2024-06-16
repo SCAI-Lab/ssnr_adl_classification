@@ -44,5 +44,14 @@ Make sure to deactivate the virtual environment when you're done working on the 
 
 `deactivate`
 
+## Loading Data
+
+In the `notebooks` folder, you will find the following Jupyter notebooks with instructions for loading data:
+
+- `loading_features.ipynb`: Instructions for loading the tabular data of feature space, users, and labels.
+- `loading_signals.ipynb`: Instructions for loading the pre-processed segmented time-series data (which can be used to extract your own features).
+
+Follow the steps provided in these notebooks to properly load and work with the data.
+
 
 python -m scripts.windowing_and_feature_extraction
