@@ -70,3 +70,9 @@ In the `notebooks` folder, you will find the following Jupyter notebooks with in
 - `loading_signals.ipynb`: Instructions for loading the pre-processed segmented time-series data (which can be used to extract your own features).
 
 Follow the steps provided in these notebooks to properly load and work with the data.
+
+## Instructions and Tutorials
+
+- `tutorial_classification.ipynb`: A tutorial for classification using nested cross-validation. This includes data normalization, feature selection, and classification. Additionally, some classification metrics are visualized to help you understand the performance of your models.
+
+Follow the steps provided in these notebooks to properly load, process, and analyze the data.
