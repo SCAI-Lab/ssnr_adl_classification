@@ -12,7 +12,7 @@ To get started with this project, first, you need to clone the repository to you
 
 After cloning the repository, navigate into the project directory:
 
-`cd your-repo-name`
+`cd <directory to the cloned repo>/ssnr_adl_classification`
 
 It's highly recommended to use a virtual environment to manage your project dependencies. Follow these steps to create and activate a virtual environment with Python 3.10.13:
 
