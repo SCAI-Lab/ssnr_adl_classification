@@ -74,5 +74,6 @@ Follow the steps provided in these notebooks to properly load and work with the 
 ## Instructions and Tutorials
 
 - `tutorial_classification.ipynb`: A tutorial for classification using nested cross-validation. This includes data normalization, feature selection, and classification. Additionally, some classification metrics are visualized to help you understand the performance of your models.
+- `tutorial_lime.ipynb`: A simple example of explaining a model using LIME (Local Interpretable Model-agnostic Explanations) analysis.
 
-Follow the steps provided in these notebooks to properly load, process, and analyze the data.
+Follow the steps provided in these notebooks to properly load, process, analyze, and explain the data.
