@@ -4,7 +4,9 @@ This repo includes anonymized labeled data for activities of daily living in spi
 
 ## Cloning the Repository
 
-To get started with this project, first, you need to clone the repository to your local machine. Open your terminal and run the following command:
+To get started with this project, first, you need to clone the repository to your local machine. To do so, first install git on your machine: https://git-scm.com/downloads
+
+Then open your terminal and run the following command:
 
 `git clone https://github.com/SCAI-Lab/ssnr_adl_classification.git`
 
