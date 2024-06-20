@@ -69,7 +69,5 @@ Make sure to deactivate the virtual environment when you're done working on the 
 In the `notebooks` folder, you will find the following Jupyter notebooks with instructions for loading data:
 
 - `tutorial_signal_processing.ipynb`: Instructions for signal processing.
-- `loading_signals.ipynb`: Instructions for loading the pre-processed segmented time-series data (which can be used to extract your own features).
-- `loading_features.ipynb`: Instructions for loading the tabular data of feature space, users, and labels. Note that the features are extracted by running `python -m scripts.windowing_and_feature_extraction`.
 - `tutorial_classification.ipynb`: Instructions for creating a classification pipeline.
 - `tutorial_lime.ipynb`: Instructions for Explaining a model using LIME analysis.
