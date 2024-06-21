@@ -71,3 +71,23 @@ In the `notebooks` folder, you will find the following Jupyter notebooks with in
 - `tutorial_signal_processing.ipynb`: Instructions for signal processing.
 - `tutorial_classification.ipynb`: Instructions for creating a classification pipeline.
 - `tutorial_lime.ipynb`: Instructions for Explaining a model using LIME analysis.
+- `tutorial_shap_exercise.ipynb`: Instructions for explaining a model with SHAP values
+- `tutorial_shap_solution.ipynb`: Solution of the exercise
+
+### Shapley Analysis Exercise
+
+Note: The ecg data can be requested from SCAI lab.
+
+Credits: The ECG encoder and decoder were adapted from the paper:
+Kuznetsov, V. V., et al. "Interpretable feature generation in ECG using a variational autoencoder." Frontiers in genetics 12 (2021): 638191.
+
+### 1. Install necessary packages:
+
+conda create --name shap_exercise python=3.11
+conda activate shap_exercise
+python -m pip install uv
+python -m uv pip install shap joblib numpy==1.26.4 pandas seaborn matplotlib xgboost scikit-learn onnxruntime
+
+### 2. Open the exercise.ipynb file.
+
+### 3. Check the solution in the solution.ipynb file.
